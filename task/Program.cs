@@ -32,5 +32,31 @@ string[] FillArray()
     return userInputArray;
 }
 
+string[] CheckStringLenght(string[] array, int notEmptyString)
+{
+    string[] newStringArray = new string[notEmptyString];
+
+    for (int i = 0; i < newStringArray.Length; i++)
+    {
+        if (array[i].Length <= 3)
+            newStringArray[i] = array[i];
+    }
+
+    return newStringArray;
+}
+
+int CountIsNotEmptyString(string[] array)
+{
+    int count = 0;
+    for (int i = 0; i < array.Length; i++)
+        if (array[i] != null)
+            count++;
+
+    return count;
+}
+
 string[] array = FillArray();
 PrintArray(array);
+int count = CountIsNotEmptyString(array);
+string[] newArray = CheckStringLenght(array, count);
+PrintArray(newArray);
