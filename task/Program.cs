@@ -55,8 +55,14 @@ int CountIsNotEmptyString(string[] array)
     return count;
 }
 
+System.Console.WriteLine("Введите элементы массива");
+System.Console.WriteLine("Чтобы закончить, нажмите 2 раза Enter");
 string[] array = FillArray();
-PrintArray(array);
 int count = CountIsNotEmptyString(array);
 string[] newArray = CheckStringLenght(array, count);
+System.Console.WriteLine("Массив введенных элементов: ");
+PrintArray(array);
+System.Console.WriteLine();
+System.Console.WriteLine("Массив элементов, длина которых меньше либо равна 3 символам: ");
 PrintArray(newArray);
+System.Console.WriteLine();
